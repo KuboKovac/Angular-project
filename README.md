@@ -1,6 +1,10 @@
 
 # Angular-project
-![Džemal sobrance Logo](https://github.com/KuboKovac/Angular-project/blob/main/server/resource/Logo-Github.png)
+
+<p align="center">
+  <img src="https://github.com/KuboKovac/Angular-project/blob/main/server/resource/Logo-Github.png">
+</p>
+
 # Desc for backend
 
 ### Backend Tasks
