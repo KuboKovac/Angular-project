@@ -3,7 +3,8 @@
 # Desc for backend
 
 ### urls:
-    0.0.0.0:6969/login
+    [POST]0.0.0.0:6969/login
+    [GET]0.0.0.0:6969/users
 
 ### Login body example
    ```
