@@ -1,0 +1,12 @@
+mat-toolbar-row{
+  display: flex;
+  flex-wrap: wrap;
+}
+span{
+  margin: auto 10px auto;
+  transition: ease-in-out 200ms;
+}
+span:hover{
+  cursor: pointer;
+  transform: scale(105%);
+}
