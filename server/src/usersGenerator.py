@@ -10,15 +10,19 @@ def xd():
                  "veronika", "password"]
 
     userAdmin = {
+        "id": 0,
         "username": "Imhotep",
-        "password": "Husak"
+        "password": "Husak",
+        "role": "Admin"
     }
     users.append(userAdmin)
 
     for i in range(5):
         user = {
+            "id": i+1,
             "username": names[random.randrange(0, len(names))],
-            "password": passwords[random.randrange(0, len(passwords))]
+            "password": passwords[random.randrange(0, len(passwords))],
+            "role": "Guest"
         }
 
         users.append(user)
