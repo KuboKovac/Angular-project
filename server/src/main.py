@@ -20,8 +20,12 @@ def login():
     return cont.checkCredential(json_req["username"], json_req["password"])
 
 
+@app.route("/users", methods=["GET"])
+def getAllUser():
+    return cont.getUsers()
+
+
 if __name__ == '__main__':
     users: tuple = usersGenerator.xd()
-    print(users)
     cont.setUsers(users)
     app.run(debug=True, port=6969)
