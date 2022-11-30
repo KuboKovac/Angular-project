@@ -37,6 +37,13 @@ def registerUser():
     json_req = json.loads(req_decoded)
     return cont.registerUser(json_req)
 
+
+@app.route("/user/delete/<id>", methods=["DELETE"])
+def removeUser(id):
+    token = request.headers.get("Authorization")
+    return cont.removeUser(int(id), token)
+
+
 if __name__ == '__main__':
     users: tuple = usersGenerator.xd()
     print(users)

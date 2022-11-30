@@ -42,7 +42,7 @@ class Controler:
         if len(username) <= 0 or len(password) <= 0:
             return {"message": "Credentials are empty or not fully filled"}, 400
         else:
-            if comparison(username, self.users) == False:
+            if comparison(username, self.users):
                 return {"message": "already exist"}, 400
             else:
                 self.users.append({
@@ -53,3 +53,12 @@ class Controler:
 
                 })
                 return {"message": username + " was successfully created"}, 200
+
+    def removeUser(self, id, token):
+        for user in self.users:
+            if user["id"] == id and user["role"] != "Admin":
+                self.users.remove(user)
+                for index, userIdReplace in enumerate(self.users):
+                    userIdReplace["id"] = index
+                return {"message": user["username"] + " was deleted"}, 200
+        return "Ta so", 400

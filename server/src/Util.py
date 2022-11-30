@@ -10,6 +10,5 @@ def token_generator(size: int) -> str:
 def comparison(username: str, users: list) -> bool:
     for user in users:
         if user["username"] == username:
-            return False
-        else:
             return True
+    return False
