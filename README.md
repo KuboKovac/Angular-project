@@ -7,7 +7,7 @@
 
 ### Login body example
    ```
-   {"username":"Imhote","password":"Husak"}
+   {"username":"Imhotep","password":"Husak"}
    ```
    admin credentials: 
    admin username: **Imhotep**
