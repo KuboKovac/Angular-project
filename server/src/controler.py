@@ -13,9 +13,11 @@ class Controler:
         self.users = inputUsername
 
     def getUsers(self) -> tuple:
-        userNames = {}
+        userNames = []
         for index, user in enumerate(self.users):
-            userNames[index] = user["username"]
+            userNames.append({"id": user["id"],
+                            "username": user["username"],
+                            "role": user["role"]})
 
         return userNames, 200
 
