@@ -9,9 +9,10 @@
 - [ ] CRUD operations for cars
 - [ ] Store token into database
 - [ ] Imporve login
+- [ ] Implement swagger
 - [ ] drink more than 10 coffees☕
 
-**Current progress `42.85%`**
+**Current progress `37.50%`**
 
 ### How to start a server ?
 - 1.First we will need python. **Not older than 3.9 ![Download Here!🐍](https://www.python.org/downloads/release/python-3110/0)**
