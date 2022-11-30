@@ -19,6 +19,7 @@
 - 3.Type script into console ```Python main.py```
 
 *A Virtual Environment is required for this server*
+      <sup>SERVER IS NOT BUILDED YET</sup>
 
    
 ### Server Paths:
