@@ -1,5 +1,7 @@
 import string
 import random
+import jsonschema
+from jsonschema import validate
 
 
 def token_generator(size: int) -> str:
@@ -12,3 +14,20 @@ def comparison(username: str, users: list) -> bool:
         if user["username"] == username:
             return True
     return False
+
+
+def validateJson(jsonData: dict) -> bool:
+    schema = {
+        "type": "object",
+        "properties": {
+            "id": {"type": "number"},
+            "username": {"type": "string"},
+            "password": {"type": "string"},
+            "role": {"type": "string"},
+        },
+    }
+    try:
+        validate(instance=jsonData, schema=schema)
+    except jsonschema.exceptions.ValidationError as err:
+        return False
+    return True

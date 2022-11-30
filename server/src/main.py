@@ -44,8 +44,16 @@ def removeUser(id):
     return cont.removeUser(int(id), token)
 
 
+@app.route("/user/update/<id>", methods=["PUT"])
+def updateUser(id):
+    token = request.headers.get("Authorization")
+    req = request.data
+    req_decoded = req.decode("utf-8")
+    json_req = json.loads(req_decoded)
+    return cont.updateUser(int(id), json_req, token)
+
+
 if __name__ == '__main__':
     users: tuple = usersGenerator.xd()
-    print(users)
     cont.setUsers(users)
     app.run(debug=True, port=6969)

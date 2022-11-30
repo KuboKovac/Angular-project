@@ -1,4 +1,6 @@
-from Util import comparison, token_generator
+import json
+
+from Util import comparison, token_generator, validateJson
 
 
 class Controler:
@@ -31,7 +33,7 @@ class Controler:
                     "username": username,
                     "token": token
                 }
-                return token, 201
+                return {"token": token}, 201
             else:
                 return {"message": "Ta so si kokot"}, 400
 
@@ -54,11 +56,21 @@ class Controler:
                 })
                 return {"message": username + " was successfully created"}, 200
 
-    def removeUser(self, id, token):
+    def removeUser(self, id, token) -> tuple:
         for user in self.users:
             if user["id"] == id and user["role"] != "Admin":
                 self.users.remove(user)
                 for index, userIdReplace in enumerate(self.users):
                     userIdReplace["id"] = index
                 return {"message": user["username"] + " was deleted"}, 200
-        return "Ta so", 400
+        return {"Message": "Ta so"}, 400
+
+    def updateUser(self, id, data, token) -> tuple:
+        for index, user in enumerate(self.users):
+            if user["id"] == id and user["role"] != "Admin":
+                if validateJson(json.loads(str(data).replace("\'", "\""))):
+                    data["id"] = user["id"]
+                    oldUser = user
+                    self.users[index] = data
+                return {"Message": oldUser["username"] + " Was replaced for " + data["username"]}, 200
+        return {"Message": "Ta so daco podloho tu je"}, 400
