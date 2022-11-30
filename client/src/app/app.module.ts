@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +11,7 @@ import { AddVehicleComponent } from './add-vehicle/add-vehicle.component';
 import { RemoveVehicleComponent } from './remove-vehicle/remove-vehicle.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import { RegisterComponent } from './register/register.component';
 
     MatToolbarModule,
     MatDialogModule,
+    MatInputModule,
 
     AppRoutingModule,
     BrowserAnimationsModule
