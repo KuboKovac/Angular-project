@@ -7,7 +7,7 @@ class Controler:
 
     def __init__(self, ):
         self.users: list = []
-        self.userTokens: dict = {}
+        self.userTokens: list = []
 
     def setUsers(self, inputUsername):
         self.users = inputUsername
@@ -16,10 +16,14 @@ class Controler:
         userNames = []
         for index, user in enumerate(self.users):
             userNames.append({"id": user["id"],
-                            "username": user["username"],
-                            "role": user["role"]})
+                                "username": user["username"],
+                                "password": user["password"],
+                                "role": user["role"]})
 
         return userNames, 200
+
+    def getUserTokens(self):
+        return self.userTokens
 
     def findUserByid(self, id) -> tuple:
         for user in self.users:
@@ -30,14 +34,17 @@ class Controler:
     def checkCredential(self, username: str, password: str) -> tuple:
         for user in self.users:
             if user["username"] == username and user["password"] == password:
+                if user["username"] in self.userTokens:
+                    print("taky tu už je")
+                    self.userTokens.remove()
                 token = token_generator(40)
-                self.userTokens = {
+
+                self.userTokens.append({
                     "username": username,
                     "token": token
-                }
+                })
                 return {"token": token}, 201
-            else:
-                return {"message": "Ta so si kokot"}, 400
+        return {"message": "Ta so si kokot"}, 400
 
     def registerUser(self, data) -> tuple:
         username = data["username"]

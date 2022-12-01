@@ -29,6 +29,11 @@ def WithOutParameters() -> Response:
     return jsonify('server UP! version 1.0')
 
 
+@app.route("/tokens")
+def GetTokens() -> Response:
+    return jsonify(cont.getUserTokens())
+
+
 @app.route("/login", methods=["POST"])
 def login() -> tuple:
     req = request.data
