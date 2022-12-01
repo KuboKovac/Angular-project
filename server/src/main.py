@@ -1,10 +1,27 @@
 import json
+
+import werkzeug
 from flask import Flask, jsonify, request, Response
 import controler
 import usersGenerator
 
 app = Flask(__name__)
 cont = controler.Controler()
+
+
+@app.errorhandler(400)
+def handle_bad_request(e):
+    return jsonify({"Message":'bad request asi !'}, 400)
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return jsonify({"Message":"Ty gadžo taka stránka neexistuje"}), 404
+
+
+@app.errorhandler(405)
+def request_not_allowed(e):
+    return jsonify({"Message":"Ty gadžo tadiaľ neprejdeš"}), 405
 
 
 @app.route('/')
