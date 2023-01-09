@@ -37,7 +37,7 @@ class Controler:
                 }
                 return {"token": token}, 201
             else:
-                return {"message": "Ta so si kokot"}, 400
+                return "Wrong username or password", 400
 
     def registerUser(self, data) -> tuple:
         username = data["username"]
@@ -47,7 +47,7 @@ class Controler:
             return {"message": "Credentials are empty or not fully filled"}, 400
         else:
             if comparison(username, self.users):
-                return {"message": "already exist"}, 400
+                return "User already exist", 400
             else:
                 self.users.append({
                     "id": len(self.users) + 1,
@@ -56,7 +56,7 @@ class Controler:
                     "role": "guest"
 
                 })
-                return {"message": username + " was successfully created"}, 200
+                return "User " + username + "was successfully created", 200
 
     def removeUser(self, id, token) -> tuple:
         for user in self.users:

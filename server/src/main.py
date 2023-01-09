@@ -1,11 +1,12 @@
 import json
-
-import werkzeug
 from flask import Flask, jsonify, request, Response
+from flask_cors import CORS
+
 import controler
 import usersGenerator
 
 app = Flask(__name__)
+CORS(app)
 cont = controler.Controler()
 
 

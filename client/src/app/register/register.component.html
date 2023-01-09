@@ -1,1 +1,26 @@
-<p>register works!</p>
+<div>
+  <h1>Register</h1>
+</div>
+<form>
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Username</mat-label>
+      <input matInput placeholder="Enter Brand" [(ngModel)]="register.username">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Enter Brand" type="password" [(ngModel)]="register.password">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Repeat password</mat-label>
+      <input matInput placeholder="Enter Brand" type="password">
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-raised-button color="accent" (click)="onSubmit()">Register</button>
+  </div>
+</form>

@@ -1,4 +1,6 @@
-export class Login{
-  name: string = ''
-  password: string = ''
+export class Login {
+  constructor(
+    public name: string = '',
+    public password: string = ''
+  ) {}
 }

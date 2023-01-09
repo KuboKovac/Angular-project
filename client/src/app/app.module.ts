@@ -12,6 +12,10 @@ import { RemoveVehicleComponent } from './remove-vehicle/remove-vehicle.componen
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {HttpClientModule} from "@angular/common/http";
+import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -25,13 +29,18 @@ import {MatInputModule} from "@angular/material/input";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
 
     MatToolbarModule,
     MatDialogModule,
+    MatButtonModule,
     MatInputModule,
+    MatSnackBarModule,
 
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
