@@ -1,0 +1,14 @@
+h1{
+  width: max-content;
+}
+.home-text{
+  width: min-content;
+  margin:35vh auto 0;
+  font-size: 2rem;
+}
+.bg-fluid{
+  filter: blur(5px) grayscale(100%);
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+}

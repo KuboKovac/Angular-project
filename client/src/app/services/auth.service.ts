@@ -12,6 +12,7 @@ import {Register} from "../../Models/register";
 })
 export class AuthService {
   private baseUrl: string = environment.baseUrl;
+  public isLoggedIn: boolean = false;
 
   get token(): string | null {
     return localStorage.getItem('token')
@@ -28,16 +29,25 @@ export class AuthService {
     private http: HttpClient,
     private msgService: MessageService
   ) {
+    this.isLoggedIn = !!localStorage.getItem('token');
   }
 
   public login(login: Login): Observable<TokenModel> {
     return this.http.post<TokenModel>(this.baseUrl + 'login', login).pipe(
       map(response => {
         this.token = response.token
+        this.msgService.message("User logged in successfully!", 3000)
+        this.isLoggedIn = true
         return new TokenModel(this.token)
       }),
       catchError(err => this.errHandler(err))
     )
+  }
+
+  public logout() {
+    this.isLoggedIn = false
+    this.msgService.message("User logged out successfully!", 3000)
+    localStorage.removeItem('token')
   }
 
   public register(register: Register): Observable<string> {

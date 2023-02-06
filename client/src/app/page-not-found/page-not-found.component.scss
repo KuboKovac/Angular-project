@@ -1,0 +1,23 @@
+h1,h3{
+  text-align: center;
+  scale: 130%;
+}
+div{
+  margin-top: 38vh;
+}
+.text{
+  animation: color-change 5s infinite;
+}
+@keyframes color-change {
+  0% { color: red; }
+  25% { color: yellow; }
+  50% { color: blue; }
+  75% { color: green; }
+  100% { color: red; }
+}
+.bg-fluid{
+  filter: blur(5px) grayscale(100%);
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+}

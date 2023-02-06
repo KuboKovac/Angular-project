@@ -1,0 +1,27 @@
+<h1>All Vehicles</h1>
+
+<mat-card>
+  <mat-card class="record" *ngFor="let vehicle of vehicles">
+    <div class="record-item">
+      <h3>Image</h3>
+    </div>
+    <div class="record-item">
+      <h3>Vehicle model</h3>
+    </div>
+    <div class="record-item">
+      <h3>Vehicle brand</h3>
+    </div>
+    <div class="record-item">
+      <h3>License plate</h3>
+    </div>
+    <div class="record-spacer">
+
+    </div>
+    <div class="record-item">
+      <p routerLink="/vehicles/1">details</p>
+    </div>
+    <div class="record-item" *ngIf="auth.isLoggedIn">
+      <button mat-button><mat-icon>delete</mat-icon></button>
+    </div>
+  </mat-card>
+</mat-card>
