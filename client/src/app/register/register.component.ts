@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../services/auth.service";
-import {MatDialog} from "@angular/material/dialog";
-import {Router} from "@angular/router";
 import {Register} from "../../Models/register";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {inputFieldsMatch} from "../../assets/validators/validators";
 
 @Component({
   selector: 'app-register',
@@ -10,16 +10,27 @@ import {Register} from "../../Models/register";
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  register: Register = new Register('', '')
+
   constructor(
     private authService: AuthService,
-    private dialog: MatDialog,
-    private router: Router
   ) {
   }
-  register: Register = new Register('', '')
+
   ngOnInit(): void {
   }
+
   public onSubmit() {
     this.authService.register(this.register)
   }
+
+  registerForm = new FormGroup({
+    username: new FormControl('', [Validators.required,Validators.minLength(4)]),
+    password: new FormControl('', [Validators.required,Validators.minLength(6)]),
+    passwordRepeat: new FormControl('',[Validators.required,inputFieldsMatch('password','passwordRepeat')])
+  },
+    {
+      // validators: inputFieldsMatch('password','passwordRepeat')
+    })
+
 }

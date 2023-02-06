@@ -1,11 +1,15 @@
-<h1>SOBRANCE MOTO</h1>
-
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span routerLink="/home">Home</span>
-    <span routerLink="/addVehicle">Add Vehicle</span>
-    <span routerLink="/removeVehicle">Remove Vehicle</span>
-    <span (click)="openLogin()">Login</span>
-    <span (click)="openRegister()">Register</span>
+    <h3 routerLink="/home" routerLinkActive="active">Home</h3>
+    <h3 routerLink="/vehicles" routerLinkActive="active">Vehicles</h3>
+    <h3 routerLink="/addVehicle" routerLinkActive="active" *ngIf="authService.isLoggedIn">Add Vehicle</h3>
+    <span class="spacer"></span>
+    <div *ngIf="!authService.isLoggedIn else elseBlock">
+      <button mat-raised-button color="accent" (click)="openLogin()">Login</button>
+      <button mat-raised-button color="accent" (click)="openRegister()">Register</button>
+    </div>
+    <ng-template #elseBlock>
+      <button mat-raised-button color="accent" (click)="logout()">Logout</button>
+    </ng-template>
   </mat-toolbar-row>
 </mat-toolbar>

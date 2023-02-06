@@ -1,3 +1,7 @@
+mat-toolbar{
+  position: sticky;
+  top: 5px;
+}
 mat-toolbar-row{
   display: flex;
   flex-wrap: wrap;
@@ -9,4 +13,18 @@ span{
 span:hover{
   cursor: pointer;
   transform: scale(105%);
+}
+button, h3{
+  margin: 10px;
+  transition: ease-in-out 200ms;
+}
+h3:hover,button:hover{
+  transform: scale(105%);
+  cursor: pointer;
+}
+.spacer{
+  flex: 1 1 0;
+}
+.active{
+  color: #ff4081;
 }
