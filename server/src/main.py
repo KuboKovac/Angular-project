@@ -2,12 +2,12 @@ import json
 from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
 
-import controler
+import controller
 import usersGenerator
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:4200"}})
-cont = controler.Controler()
+cont = controller.Controller()
 
 
 @app.errorhandler(400)

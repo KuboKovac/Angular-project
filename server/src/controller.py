@@ -4,7 +4,7 @@ from cars import Car
 from Util import comparison, token_generator, validateJson
 
 
-class Controler:
+class Controller:
 
     def __init__(self, ):
         self.users: list = []
