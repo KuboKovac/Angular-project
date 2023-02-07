@@ -23,7 +23,6 @@ class Car:
             }
         )
 
-
     def setCarlist(self, value):
         self.carList.append(value)
 
