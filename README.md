@@ -11,13 +11,13 @@
 - [x] Initialization of server
 - [x] Memory database
 - [x] CRUD operations for users
-- [ ] CRUD operations for cars
+- [x] CRUD operations for cars
 - [ ] Store token into database
-- [ ] Imporve login
+- [x] Imporve login
 - [ ] Implement swagger
-- [ ] drink more than 10 coffees☕
+- [x] drink more than 10 coffees☕
 
-**Current progress `37.50%`**
+**Current progress `75%`**
 
 ### How to start a server ?
 - 1.First we will need python. **Not older than 3.9 ![Download Here!🐍](https://www.python.org/downloads/release/python-3110/0)**
@@ -29,13 +29,21 @@
 
    
 ### Server Paths:
-   ```diff
+   ```
+   -login and user path
     🟡   [POST]   0.0.0.0:6969/login
     🟢   [GET]    0.0.0.0:6969/user/all
     🟢   [GET]    0.0.0.0:6969/user/<id>
     🟡   [POST]   0.0.0.0:6969/user/new
     🔴   [DEL]    0.0.0.0:6969/user/delete/<id>
     🔵   [PUT]    0.0.0.0:6969/user/update/<id>
+    
+    -car paths
+    🟢   [GET]    0.0.0.0:6969/car/<id>
+    🟢   [GET]    0.0.0.0:6969/car/all
+    🟡   [POST]   0.0.0.0:6969/car/new
+    🔴   [DEL]    0.0.0.0:6969/car/delete/<id>
+    🔵   [PUT]    0.0.0.0:6969/car/update/<id>
    ```
 ### Login body example
    ```
@@ -47,9 +55,34 @@
 
 ### Create new user
     {"username":"pišta","password":"123"}
-    
-
 
 ### Update body example
    
     {"id": 2, "username": "Kamil", "password": "Husak", "role": "Guest"}
+
+### Add new car
+```
+  {
+    "id": 1,
+    "vehicleModel": "KOLT",
+    "vehicleBrand": "MITSUBIŠI",
+    "licensePlate": "SOKERES",
+    "imageUrl": "www.gugl.com/image.jpg",
+    "owner": "Števko"
+}
+```
+
+### Update car example
+
+```
+  {
+    "id": 1,
+    "vehicleModel": "KOLT",
+    "vehicleBrand": "MITSUBIŠI",
+    "licensePlate": "SOKERES",
+    "imageUrl": "www.gugl.com/image.jpg",
+    "owner": "Števko"
+}
+```
+# license
+### KASV
