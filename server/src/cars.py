@@ -15,10 +15,10 @@ class Car:
         self.carList.append(
             {
                 "id": 1,
-                "vehicleModel": "MITSUBIŠI",
-                "vehicleBrand": "KOLT(KOKOC)",
+                "vehicleModel": "KOLT(KOKOC)",
+                "vehicleBrand": "MITSUBIŠI",
                 "licensePlate": "SOKERES",
-                "imageUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DUPvL8IaRNtE&psig=AOvVaw3W2Unxq54GXU-IGL7yAegN&ust=1675870693955000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLCc9fzeg_0CFQAAAAAdAAAAABAE",
+                "imageUrl": "https://d2cdo4blch85n8.cloudfront.net/wp-content/uploads/2017/11/1969-%E2%80%9DDickmobile%E2%80%9D-Art-Car-by-Steve-Paige-Featured-image-672x372.jpg",
                 "owner": "Richard"
             }
         )
