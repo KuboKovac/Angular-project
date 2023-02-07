@@ -74,7 +74,12 @@ def updateUser(id):
 @app.route("/car/<id>", methods=["GET"])
 def getCar(id):
     req = request.data
-    return cont.GetCarById(int(id))
+    return cont.getCarById(int(id))
+
+
+@app.route("/car/all", methods=["GET"])
+def GetAllCars():
+    return cont.getAllCars()
 
 
 if __name__ == '__main__':

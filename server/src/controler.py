@@ -79,6 +79,9 @@ class Controler:
                 return {"Message": oldUser["username"] + " Was replaced for " + data["username"]}, 200
         return {"Message": "Ta so daco podloho tu je"}, 400
 
-    def GetCarById(self, id):
+    def getCarById(self, id) -> tuple:
         response = self.carObject.getCarById(id)
         return response if response != [] else {"Message": "Richard"}
+
+    def getAllCars(self) -> tuple:
+        return self.carObject.getCarList()
