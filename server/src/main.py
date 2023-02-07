@@ -71,6 +71,12 @@ def updateUser(id):
     return cont.updateUser(int(id), json_req, token)
 
 
+@app.route("/car/<id>", methods=["GET"])
+def getCar(id):
+    req = request.data
+    return cont.GetCarById(int(id))
+
+
 if __name__ == '__main__':
     users: tuple = usersGenerator.xd()
     cont.setUsers(users)

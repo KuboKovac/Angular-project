@@ -1,4 +1,5 @@
 import json
+from cars import Car
 
 from Util import comparison, token_generator, validateJson
 
@@ -8,6 +9,7 @@ class Controler:
     def __init__(self, ):
         self.users: list = []
         self.userTokens: dict = {}
+        self.carObject: Car = Car()
 
     def setUsers(self, inputUsername):
         self.users = inputUsername
@@ -16,8 +18,8 @@ class Controler:
         userNames = []
         for index, user in enumerate(self.users):
             userNames.append({"id": user["id"],
-                            "username": user["username"],
-                            "role": user["role"]})
+                              "username": user["username"],
+                              "role": user["role"]})
 
         return userNames, 200
 
@@ -76,3 +78,7 @@ class Controler:
                     self.users[index] = data
                 return {"Message": oldUser["username"] + " Was replaced for " + data["username"]}, 200
         return {"Message": "Ta so daco podloho tu je"}, 400
+
+    def GetCarById(self, id):
+        response = self.carObject.getCarById(id)
+        return response if response != [] else {"Message": "Richard"}
