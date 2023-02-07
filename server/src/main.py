@@ -78,8 +78,33 @@ def getCar(id):
 
 
 @app.route("/car/all", methods=["GET"])
-def GetAllCars():
+def getAllCars():
     return cont.getAllCars()
+
+
+@app.route("/car/delete/<id>", methods=["DELETE"])
+def removeCar(id):
+    token = request.headers.get("Authorization")
+    req = request.data
+    return cont.removeCarById(id,token)
+
+
+@app.route("/car/new", methods=["POST"])
+def newCar():
+    token = request.headers.get("Authorization")
+    req = request.data
+    req_decoded = req.decode("utf-8")
+    json_req = json.loads(req_decoded)
+    return cont.addNewCar(json_req,token)
+
+
+@app.route("/car/update/<id>", methods=["PUT"])
+def updateCar(id):
+    token = request.headers.get("Authorization")
+    req = request.data
+    req_decoded = req.decode("utf-8")
+    json_req = json.loads(req_decoded)
+    return cont.updateCarById(int(id), json_req,token)
 
 
 if __name__ == '__main__':

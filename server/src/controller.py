@@ -79,9 +79,18 @@ class Controller:
                 return {"Message": oldUser["username"] + " Was replaced for " + data["username"]}, 200
         return {"Message": "Ta so daco podloho tu je"}, 400
 
-    def getCarById(self, id) -> tuple:
+    def getCarById(self, id):
         response = self.carObject.getCarById(id)
         return response if response != [] else {"Message": "Richard"}
 
-    def getAllCars(self) -> tuple:
+    def getAllCars(self) -> list:
         return self.carObject.getCarList()
+
+    def updateCarById(self, id, data, token):
+        return self.carObject.updateCar(id, data)
+
+    def removeCarById(self, id,token) -> tuple:
+        return self.carObject.RemoveCarById(id)
+
+    def addNewCar(self, data,token):
+        return self.carObject.AddNewCar(data)
