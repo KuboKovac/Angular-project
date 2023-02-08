@@ -1,17 +1,9 @@
 import json
 
 from init_cars import carList
+
+
 class Car:
-    """"
-    {
-    id: number,
-    vehicleModel: string,
-    vehicleBrand: string,
-    licensePlate: string,
-    imageUrl: string
-    owner: User
-    },
-    """
 
     def __init__(self):
         self.carList: list = []
@@ -39,7 +31,7 @@ class Car:
                 self.carList.remove(car)
                 return {"message": car["vehicleBrand"] + " was deleted"}, 200
 
-        return {"Message": "Ta so"}, 400
+        return {"Message": "This car with this id doesn't exist"}, 400
 
     def AddNewCar(self, data) -> tuple:
         if all(key in data for key in ["id", "vehicleModel", "vehicleBrand", "licensePlate", "imageUrl", "owner"]):

@@ -12,22 +12,22 @@ cont = controller.Controller()
 
 @app.errorhandler(400)
 def handle_bad_request(e):
-    return jsonify({"Message": 'bad request asi !'}, 400)
+    return jsonify({"Message": 'bad request!'}, 400)
 
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return jsonify({"Message": "Ty gadžo taka stránka neexistuje"}), 404
+    return jsonify({"Message": "this endpoint doesn't exist"}), 404
 
 
 @app.errorhandler(405)
 def request_not_allowed(e):
-    return jsonify({"Message": "Ty gadžo tadiaľ neprejdeš"}), 405
+    return jsonify({"Message": "bad gateway"}), 405
 
 
 @app.route('/')
 def WithOutParameters() -> Response:
-    return jsonify('server UP! version 1.0')
+    return jsonify('server UP! version 6.8')
 
 
 @app.route("/login", methods=["POST"])
