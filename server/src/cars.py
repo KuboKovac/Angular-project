@@ -1,5 +1,3 @@
-import json
-
 from init_cars import carList
 
 
