@@ -1,3 +1,6 @@
+import json
+
+from init_cars import carList
 class Car:
     """"
     {
@@ -12,16 +15,8 @@ class Car:
 
     def __init__(self):
         self.carList: list = []
-        self.carList.append(
-            {
-                "id": 1,
-                "vehicleModel": "KOLT(KOKOC)",
-                "vehicleBrand": "MITSUBIŠI",
-                "licensePlate": "SOKERES",
-                "imageUrl": "https://d2cdo4blch85n8.cloudfront.net/wp-content/uploads/2017/11/1969-%E2%80%9DDickmobile%E2%80%9D-Art-Car-by-Steve-Paige-Featured-image-672x372.jpg",
-                "owner": "Richard"
-            }
-        )
+        for obj in carList:
+            self.carList.append(obj)
 
     def setCarlist(self, value) -> None:
         self.carList.append(value)
