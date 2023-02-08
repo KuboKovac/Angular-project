@@ -54,5 +54,13 @@ carList: list = [
     "licensePlate": "NIS56",
     "imageUrl": "https://i.pinimg.com/originals/9c/36/d1/9c36d1f112a38914695b86722551b40d.jpg",
     "owner": names[random.randrange(0, len(names))]
+},
+{
+    "id": 7,
+    "vehicleModel": "GOLF MK4 (Euro 6)",
+    "vehicleBrand": "Volkswagen",
+    "licensePlate": "TR658",
+    "imageUrl": "https://i.imgflip.com/t037d.gif",
+    "owner": names[random.randrange(0, len(names))]
 }
 ]
