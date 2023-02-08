@@ -72,7 +72,9 @@
     "vehicleBrand": "MITSUBIŠI",
     "licensePlate": "SOKERES",
     "imageUrl": "www.gugl.com/image.jpg",
-    "owner": "Števko"
+    "owner": "Števko",
+    "price": 200,
+    "kilometers": 800000
 }
 ```
 
@@ -85,7 +87,9 @@
     "vehicleBrand": "MITSUBIŠI",
     "licensePlate": "SOKERES",
     "imageUrl": "www.gugl.com/image.jpg",
-    "owner": "Števko"
+    "owner": "Števko",
+    "price": 200,
+    "kilometers": 800000
 }
 ```
 # license
