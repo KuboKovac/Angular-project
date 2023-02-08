@@ -3,25 +3,31 @@
 <mat-card>
   <mat-card class="record" *ngFor="let vehicle of vehicles">
     <div class="record-item">
-      <h3>Image</h3>
+      <img src="{{vehicle.imageUrl}}">
     </div>
     <div class="record-item">
-      <h3>Vehicle model</h3>
+      <h3>Brand: </h3>
+      <p>{{vehicle.vehicleBrand}}</p>
     </div>
     <div class="record-item">
-      <h3>Vehicle brand</h3>
+      <h3>Model: </h3>
+      <p>{{vehicle.vehicleModel}}</p>
     </div>
     <div class="record-item">
-      <h3>License plate</h3>
+      <h3>License plate: </h3>
+      <p>{{vehicle.licensePlate}}</p>
     </div>
     <div class="record-spacer">
 
     </div>
     <div class="record-item">
-      <p routerLink="/vehicles/1">details</p>
+      <p class="p" routerLink="/vehicles/{{vehicle.id}}">details</p>
     </div>
     <div class="record-item" *ngIf="auth.isLoggedIn">
-      <button mat-button><mat-icon>delete</mat-icon></button>
+      <button mat-button (click)="editVehicle(vehicle.id)"><mat-icon>edit</mat-icon></button>
+    </div>
+    <div class="record-item" *ngIf="auth.isLoggedIn">
+      <button mat-button (click)="deleteVehicle(vehicle.id)"><mat-icon>delete</mat-icon></button>
     </div>
   </mat-card>
 </mat-card>

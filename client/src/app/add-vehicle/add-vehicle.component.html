@@ -1,54 +1,52 @@
-<h2>Add vehicle</h2>
+<h1>Add vehicle</h1>
 
-<form>
-  <div class="flex-row">
-    <mat-form-field class="example-full-width">
-      <mat-label>Vehicle name</mat-label>
-      <input matInput placeholder="Enter name">
-    </mat-form-field>
+<mat-card>
 
-    <mat-form-field class="example-full-width">
-      <mat-label>Vehicle brand</mat-label>
-      <input matInput placeholder="Enter Brand">
-    </mat-form-field>
+  <form [formGroup]="vehicleForm">
+    <div class="flex-row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Vehicle name</mat-label>
+        <input matInput placeholder="Enter vehicle model" name="vehicleModel" [(ngModel)]="vehicle.vehicleModel" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Vehicle brand</mat-label>
+        <input matInput placeholder="Enter Brand" name="vehicleBrand" [(ngModel)]="vehicle.vehicleBrand" formControlName="brand">
+      </mat-form-field>
+    </div>
+
+    <div class="flex-row">
+      <mat-form-field class="example-full-width">
+        <mat-label>License plate</mat-label>
+        <input matInput placeholder="License Plate" name="licensePlate" [(ngModel)]="vehicle.licensePlate" formControlName="licensePlate">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Owner</mat-label>
+        <input matInput placeholder="Enter Owner" name="owner" [(ngModel)]="vehicle.owner"  formControlName="owner">
+      </mat-form-field>
+    </div>
+    <div class="flex-row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Kilometers</mat-label>
+        <input matInput placeholder="Kilometers" name="kilometers" [(ngModel)]="vehicle.kilometers" formControlName="km">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="Enter Price" name="price" [(ngModel)]="vehicle.price" formControlName="price">
+      </mat-form-field>
+    </div>
+
+    <div class="flex-row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Picture url</mat-label>
+        <input matInput placeholder="Enter picture url" [(ngModel)]="vehicle.imageUrl" name="imageUrl"  formControlName="pictureUrl">
+      </mat-form-field>
+    </div>
+
+  </form>
+  <div class="btn-wrap">
+    <button mat-raised-button color="accent" (click)="addVehicle()" [disabled]="vehicleForm.invalid">Add</button>
   </div>
-
-  <div class="flex-row">
-    <mat-form-field class="example-full-width">
-      <mat-label>Vehicle name</mat-label>
-      <input matInput placeholder="Enter name">
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <mat-label>Vehicle brand</mat-label>
-      <input matInput placeholder="Enter Brand">
-    </mat-form-field>
-  </div>
-
-  <div class="flex-row">
-    <mat-form-field class="example-full-width">
-      <mat-label>Vehicle name</mat-label>
-      <input matInput placeholder="Enter name">
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <mat-label>Vehicle brand</mat-label>
-      <input matInput placeholder="Enter Brand">
-    </mat-form-field>
-  </div>
-
-  <div class="flex-row">
-    <mat-form-field class="example-full-width">
-      <mat-label>Vehicle name</mat-label>
-      <input matInput placeholder="Enter name">
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width">
-      <mat-label>Vehicle brand</mat-label>
-      <input matInput placeholder="Enter Brand">
-    </mat-form-field>
-  </div>
-</form>
-<div class="btn-wrap">
-  <button mat-raised-button color="accent">Add</button>
-</div>
+</mat-card>

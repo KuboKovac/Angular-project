@@ -1,6 +1,10 @@
 mat-form-field{
   margin: 0 15px 0;
 }
+mat-card{
+  width: 40%;
+  margin: 45px auto 0;
+}
 form{
   margin: 0 auto 0;
   width: 25vw;
@@ -10,9 +14,9 @@ form{
   justify-content: center;
   align-items: center;
 }
-h2{
-  width: max-content;
-  margin: 15px auto 15px;
+h1{
+  font-size: 3.5rem;
+  text-align: center;
 }
 button{
   width: 130%;

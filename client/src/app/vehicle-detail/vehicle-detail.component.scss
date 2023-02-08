@@ -6,3 +6,18 @@ mat-card{
   height: 65vh;
   margin: 6vh auto;
 }
+h3, p {
+  margin: 5px 10px 5px;
+}
+button{
+  margin:5px 0 25px;
+}
+img{
+  width: 30vw;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}

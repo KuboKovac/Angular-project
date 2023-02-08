@@ -8,6 +8,9 @@ mat-card{
   margin: 6vh auto;
   overflow-x: scroll;
 }
+img{
+  width: 5vw;
+}
 .record{
   padding: 0;
   margin: 4px auto 0;
@@ -22,7 +25,7 @@ mat-card{
   .record-spacer{
     flex: 1 1 0;
   }
-  p:hover{
+  .p:hover{
     transition: ease-in-out 200ms;
     color: deeppink;
     transform: scale(104%);

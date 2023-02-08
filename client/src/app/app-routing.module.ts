@@ -9,6 +9,7 @@ import {VehicleDetailComponent} from "./vehicle-detail/vehicle-detail.component"
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'vehicles', component: VehiclesComponent},
   {path: 'addVehicle', component: AddVehicleComponent, canActivate: [LoginGuard]},
   {path: 'vehicles/:id', component: VehicleDetailComponent},

@@ -1,6 +1,4 @@
 from init_cars import carList
-
-
 class Car:
 
     def __init__(self):
