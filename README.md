@@ -12,17 +12,21 @@
 - [x] Memory database
 - [x] CRUD operations for users
 - [x] CRUD operations for cars
-- [ ] Store token into database
+- [x] Store token into database
 - [x] Imporve login
 - [ ] Implement swagger
 - [x] drink more than 10 coffees☕
 
-**Current progress `75%`**
+**Current progress `87,5%`**
 
 ### How to start a server ?
-- 1.First we will need python. **Not older than 3.9 ![Download Here!🐍](https://www.python.org/downloads/release/python-3110/0)**
-- 2.Open the folder where the file main.py is located, through the command line
-- 3.Type script into console ```Python main.py```
+- 1.First we will need python. **Not older than 3.9 ![Download Here!🐍](https://www.python.org/downloads/release/python-3915/)**
+- 2.Open Server file
+- 3.Create ENV by ```python3 -m venv```
+- 4.Then activate env by locating ```{path}\env\Scripts\activate.bat```
+- 5.Install dependecies by ```pip install -r requirements.txt```
+- 6.Open the folder where the file main.py is located, through the command line
+- 7.Type script into console ```Python main.py```
 
 *A Virtual Environment is required for this server*
       <sup>SERVER IS NOT BUILDED YET</sup>
@@ -85,4 +89,4 @@
 }
 ```
 # license
-### KASV
+open by KASV students
