@@ -32,7 +32,7 @@ class Car:
         return {"Message": "This car with this id doesn't exist"}, 400
 
     def AddNewCar(self, data) -> tuple:
-        if all(key in data for key in ["id", "vehicleModel", "vehicleBrand", "licensePlate", "imageUrl", "owner"]):
+        if all(key in data for key in ["id", "vehicleModel", "vehicleBrand", "licensePlate", "imageUrl", "owner","price","kilometers"]):
 
             if next((i for i in self.carList if i["licensePlate"] == data["licensePlate"]), None):
                 return {"Message": "Car with this license plate exist"}, 400
@@ -45,6 +45,8 @@ class Car:
                     "licensePlate": data["licensePlate"],
                     "imageUrl": data["imageUrl"],
                     "owner": data["owner"],
+                    "price": data["price"],
+                    "kilometers": data["kilometers"]
                 }
             )
 
@@ -56,7 +58,7 @@ class Car:
         for index, car in enumerate(self.carList):
             if car["id"] == id:
                 if all(key in data for key in ["id", "vehicleModel", "vehicleBrand",
-                                               "licensePlate", "imageUrl", "owner"]):
+                                               "licensePlate", "imageUrl", "owner","price","kilometers"]):
                     data["id"] = car["id"]
                     self.carList[index] = data
                 return {"Message": "Car has been updated"}, 200
