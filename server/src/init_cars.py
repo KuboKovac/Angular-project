@@ -71,9 +71,9 @@ carList: list = [
     "id": 7,
     "vehicleModel": "GOLF MK4 (Euro 6)",
     "vehicleBrand": "Volkswagen",
-    "licensePlate": "TR658",
+    "licensePlate": "KE885VT",
     "imageUrl": "https://i.imgflip.com/t037d.gif",
-    "owner": names[random.randrange(0, len(names))],
+    "owner": "Maťko džuris",
     "price": random.randrange(999, 5_500),
     "kilometers": random.randrange(450_000, 1_000_025)
 }
