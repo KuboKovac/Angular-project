@@ -1,5 +1,28 @@
 <h1>Vehicle Details</h1>
 
 <mat-card>
-
+  <div class="row">
+    <img src="{{vehicle[0]?.imageUrl}}">
+  </div>
+  <div class="row">
+    <h3>Brand: </h3>
+    <p>{{vehicle[0]?.vehicleBrand}}</p>
+    <h3>Model: </h3>
+    <p>{{vehicle[0]?.vehicleModel}}</p>
+  </div>
+  <div class="row">
+    <h3>License plate: </h3>
+    <p>{{vehicle[0]?.licensePlate}}</p>
+    <h3>Owner: </h3>
+    <p>{{vehicle[0]?.owner}}</p>
+  </div>
+  <div class="row">
+    <h3>KM: </h3>
+    <p>{{vehicle[0]?.kilometers}}km</p>
+    <h3>Price: </h3>
+    <p>{{vehicle[0]?.price}}€</p>
+  </div>
+  <div class="row">
+    <button mat-raised-button color="accent" routerLink="/vehicles" ou><- Back</button>
+  </div>
 </mat-card>

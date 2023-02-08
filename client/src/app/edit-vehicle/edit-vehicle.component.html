@@ -1,0 +1,52 @@
+
+<h1>Edit vehicle</h1>
+
+<mat-card>
+  <form>
+    <div class="flex-row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Vehicle name</mat-label>
+        <input matInput placeholder="Enter vehicle model" name="vehicleModel" [(ngModel)]="vehicle[0].vehicleModel" >
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Vehicle brand</mat-label>
+        <input matInput placeholder="Enter Brand" name="vehicleBrand" [(ngModel)]="vehicle[0].vehicleBrand" >
+      </mat-form-field>
+    </div>
+
+    <div class="flex-row">
+      <mat-form-field class="example-full-width">
+        <mat-label>License plate</mat-label>
+        <input matInput placeholder="License Plate" name="licensePlate" [(ngModel)]="vehicle[0].licensePlate">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Owner</mat-label>
+        <input matInput placeholder="Enter Owner" name="owner" [(ngModel)]="vehicle[0].owner">
+      </mat-form-field>
+    </div>
+    <div class="flex-row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Kilometers</mat-label>
+        <input matInput placeholder="Kilometers" name="km" [(ngModel)]="vehicle[0].kilometers">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="Enter Price" name="price" [(ngModel)]="vehicle[0].price">
+      </mat-form-field>
+    </div>
+
+    <div class="flex-row">
+      <mat-form-field class="example-full-width">
+        <mat-label>Picture url</mat-label>
+        <input matInput placeholder="Enter picture url" [(ngModel)]="vehicle[0].imageUrl" name="imageUrl">
+      </mat-form-field>
+    </div>
+
+  </form>
+  <div class="btn-wrap">
+    <button mat-raised-button color="accent" (click)="updateData()">Modify</button>
+  </div>
+</mat-card>

@@ -21,6 +21,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {MatIconModule} from "@angular/material/icon";
 import { VehicleDetailComponent } from './vehicle-detail/vehicle-detail.component';
 import { FooterComponent } from './footer/footer.component';
+import { EditVehicleComponent } from './edit-vehicle/edit-vehicle.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FooterComponent } from './footer/footer.component';
     VehiclesComponent,
     PageNotFoundComponent,
     VehicleDetailComponent,
-    FooterComponent
+    FooterComponent,
+    EditVehicleComponent
   ],
   imports: [
     BrowserModule,

@@ -89,8 +89,8 @@ class Controller:
     def updateCarById(self, id, data, token):
         return self.carObject.updateCar(id, data)
 
-    def removeCarById(self, id,token) -> tuple:
+    def removeCarById(self, id) -> tuple:
         return self.carObject.RemoveCarById(id)
 
-    def addNewCar(self, data,token):
+    def addNewCar(self, data):
         return self.carObject.AddNewCar(data)
